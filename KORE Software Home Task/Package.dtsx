@@ -1,0 +1,3207 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2024 12:03:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CHARLIEPC"
+  DTS:CreatorName="CHARLIEPC\Charlie Li"
+  DTS:DTSID="{F7DD73D5-916D-401F-89BB-038376E81AD1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{92B9797E-4FDF-4207-AA45-B6A5E4C6829C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{02212B73-8E92-49E0-A276-3C4684490CEF}"
+      DTS:ObjectName="CharliePC.KoreAssignment_Charlie_Li">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=CharliePC;Initial Catalog=KoreAssignment_Charlie_Li;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F0285254-09C0-4B10-8E7D-B531ECB49E2D}"
+      DTS:ObjectName="CSV File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Charlie's Stuff\Visual Studio Repos\KORE Software Home Task\KORE Software Home Task\Data\data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserID"
+              DTS:DTSID="{808B225F-6BC4-4CFA-BADB-DF502F77D63B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullName"
+              DTS:DTSID="{5AD80A7F-1898-4F06-8BA2-394B6C2ABF44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{B8125B34-648B-4395-A7DD-B7D9E072786A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{E3107165-58EE-4A5E-B681-A5B36CE68F38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegistrationDate"
+              DTS:DTSID="{56F5770B-141D-4AB4-8BB7-925765762283}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastLoginDate"
+              DTS:DTSID="{D9328D73-25BA-45C2-B14C-15DFA2C20432}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PurchaseTotal"
+              DTS:DTSID="{EBF11232-ED8B-4B3F-9466-C2B3724EBBF0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Cleaning in Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Data Cleaning in Staging"
+      DTS:DTSID="{39437CC5-FE50-4DD9-B1CA-C022E788249B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Cleaning in Staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{02212B73-8E92-49E0-A276-3C4684490CEF}"
+          SQLTask:SqlStatementSource="DELETE FROM [KoreAssignment_Charlie_Li].[stg].[Users]&#xA;WHERE [UserID] IS NULL OR [StgID] NOT IN&#xA;(&#xA;&#x9;SELECT MIN(StgID)&#xA;&#x9;FROM [KoreAssignment_Charlie_Li].[stg].[Users]&#xA;&#x9;GROUP BY [UserID], [FullName], [Age], [Email], [RegistrationDate], [LastLoginDate], [PurchaseTotal]&#xA;);&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract from CSV to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Extract from CSV to Staging"
+      DTS:DTSID="{049E55F8-0C77-4BA3-B032-19602D254E17}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract from CSV to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract from CSV to Staging\Convert Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[UserID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UserID"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[Age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[RegistrationDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RegistrationDate"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[LastLoginDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastLoginDate"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[PurchaseTotal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PurchaseTotal"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[FullName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FullName"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input].Columns[Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Email"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Email]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[UserID (int)]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[UserID (int)]"
+                      name="UserID (int)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]}) ? NULL(DT_I4) : ((#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]} == "" || #{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]} == "null") ? NULL(DT_I4) : (DT_I4)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(UserID) ? NULL(DT_I4) : ((UserID == "" || UserID == "null") ? NULL(DT_I4) : (DT_I4)UserID)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Age (int)]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Age (int)]"
+                      name="Age (int)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]}) ? NULL(DT_I4) : ((#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]} == "" || #{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]} == "null") ? NULL(DT_I4) : (DT_I4)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Age) ? NULL(DT_I4) : ((Age == "" || Age == "null") ? NULL(DT_I4) : (DT_I4)Age)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[RegistrationDate (date)]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[RegistrationDate (date)]"
+                      name="RegistrationDate (date)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]}) ? NULL(DT_DBDATE) : ((#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]} == "" || #{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]} == "null") ? NULL(DT_DBDATE) : (DT_DBDATE)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(RegistrationDate) ? NULL(DT_DBDATE) : ((RegistrationDate == "" || RegistrationDate == "null") ? NULL(DT_DBDATE) : (DT_DBDATE)RegistrationDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[LastLoginDate (date)]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[LastLoginDate (date)]"
+                      name="LastLoginDate (date)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]}) ? NULL(DT_DBDATE) : ((#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]} == "" || #{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]} == "null") ? NULL(DT_DBDATE) : (DT_DBDATE)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(LastLoginDate) ? NULL(DT_DBDATE) : ((LastLoginDate == "" || LastLoginDate == "null") ? NULL(DT_DBDATE) : (DT_DBDATE)LastLoginDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[PurchaseTotal (float)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[PurchaseTotal (float)]"
+                      name="PurchaseTotal (float)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]}) ? NULL(DT_R8) : ((#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]} == "" || #{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]} == "null") ? NULL(DT_R8) : (DT_R8)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(PurchaseTotal) ? NULL(DT_R8) : ((PurchaseTotal == "" || PurchaseTotal == "null") ? NULL(DT_R8) : (DT_R8)PurchaseTotal)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[FullName (nvarchar(255))]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[FullName (nvarchar(255))]"
+                      name="FullName (nvarchar(255))"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[FullName]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)FullName</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Email (nvarchar(255))]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Email (nvarchar(255))]"
+                      name="Email (nvarchar(255))"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Email]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)Email</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract from CSV to Staging\Load from CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="4105"
+              name="Load from CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract from CSV to Staging\Load from CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      length="50"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract from CSV to Staging\Store to Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Store to Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract from CSV to Staging\Store to Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  connectionManagerRefId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[UserID (int)]"
+                      cachedDataType="i4"
+                      cachedName="UserID (int)"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[UserID (int)]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[FullName (nvarchar(255))]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName (nvarchar(255))"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[FullName (nvarchar(255))]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[Age (int)]"
+                      cachedDataType="i4"
+                      cachedName="Age (int)"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Age (int)]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[Email (nvarchar(255))]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email (nvarchar(255))"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[Email (nvarchar(255))]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[RegistrationDate (date)]"
+                      cachedDataType="dbDate"
+                      cachedName="RegistrationDate (date)"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[RegistrationDate (date)]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[LastLoginDate (date)]"
+                      cachedDataType="dbDate"
+                      cachedName="LastLoginDate (date)"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[LastLoginDate (date)]" />
+                    <inputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].Columns[PurchaseTotal (float)]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal (float)"
+                      externalMetadataColumnId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output].Columns[PurchaseTotal (float)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract from CSV to Staging\Store to Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Store to Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract from CSV to Staging\Store to Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract from CSV to Staging\Store to Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract from CSV to Staging.Paths[Derived Column Output]"
+              endId="Package\Extract from CSV to Staging\Store to Staging.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Extract from CSV to Staging\Convert Data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Extract from CSV to Staging.Paths[Flat File Source Output]"
+              endId="Package\Extract from CSV to Staging\Convert Data.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract from CSV to Staging\Load from CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Store to Production"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AB69D04E-9B66-4899-9123-CDCADADA7BFC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Store to Production"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Store to Production\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input].Columns[UserID (stag)]"
+                      cachedDataType="i4"
+                      cachedName="UserID (stag)"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input].Columns[UserID (prod)]"
+                      cachedDataType="i4"
+                      cachedName="UserID (prod)"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (prod)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Conditional Split.Outputs[UPDATE (UserID match)]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="UPDATE (UserID match)"
+                  synchronousInputId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]}) &amp;&amp; ![ISNULL](#{Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (prod)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL([UserID (stag)]) &amp;&amp; !ISNULL([UserID (prod)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Store to Production\Conditional Split.Outputs[INSERT (UserID not match)]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="INSERT (UserID not match)"
+                  synchronousInputId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (prod)]}) &amp;&amp; ![ISNULL](#{Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL([UserID (prod)]) &amp;&amp; !ISNULL([UserID (stag)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Load from Production"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load from Production"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[prod].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Store to Production\Load from Production.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  connectionManagerRefId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[UserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[RecordLastUpdated]"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RecordLastUpdated]"
+                      name="RecordLastUpdated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].ExternalColumns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      name="RecordLastUpdated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      name="UserID" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      name="FullName" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      name="RegistrationDate" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      name="LastLoginDate" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[RecordLastUpdated]"
+                      name="RecordLastUpdated" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Load from Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load from Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Store to Production\Load from Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  connectionManagerRefId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[StgID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[StgID]"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[StgID]"
+                      name="StgID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[UserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      name="StgID" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      name="UserID" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      name="FullName" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      name="RegistrationDate" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      name="LastLoginDate" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Store to Production\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Merge Join.Inputs[Merge Join Right Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[UserID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]"
+                      name="UserID (stag)"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[UserID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[FullName]"
+                      name="FullName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[FullName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Email]"
+                      name="Email">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[Email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[RegistrationDate]"
+                      name="RegistrationDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[RegistrationDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[LastLoginDate]"
+                      name="LastLoginDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[LastLoginDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Left Input].Columns[PurchaseTotal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (prod)]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (prod)]"
+                      name="UserID (prod)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Store to Production\Merge Join.Inputs[Merge Join Right Input].Columns[UserID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Sort Production on UserID"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Production on UserID"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[ID]"
+                      cachedDataType="i4"
+                      cachedName="ID"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[UserID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[FullName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RegistrationDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[LastLoginDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[PurchaseTotal]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input].Columns[RecordLastUpdated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RecordLastUpdated"
+                      lineageId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RecordLastUpdated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[UserID]"
+                      name="UserID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[UserID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[FullName]"
+                      name="FullName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[FullName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[Email]"
+                      name="Email">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[Email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[RegistrationDate]"
+                      name="RegistrationDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RegistrationDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[LastLoginDate]"
+                      name="LastLoginDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[LastLoginDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[PurchaseTotal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output].Columns[RecordLastUpdated]"
+                      name="RecordLastUpdated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Production.Outputs[OLE DB Source Output].Columns[RecordLastUpdated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Sort Staging on UserID"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Staging on UserID"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[StgID]"
+                      cachedDataType="i4"
+                      cachedName="StgID"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[StgID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[UserID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[FullName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[RegistrationDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[LastLoginDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      lineageId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[PurchaseTotal]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[StgID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[StgID]"
+                      name="StgID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[StgID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[UserID]"
+                      name="UserID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[UserID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[FullName]"
+                      name="FullName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[FullName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[Email]"
+                      name="Email">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[Email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[RegistrationDate]"
+                      name="RegistrationDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[RegistrationDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[LastLoginDate]"
+                      name="LastLoginDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[LastLoginDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output].Columns[PurchaseTotal]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Store New Entries to Production"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Store New Entries to Production"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[prod].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Store to Production\Store New Entries to Production.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  connectionManagerRefId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[PurchaseTotal]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].Columns[UserID (stag)]"
+                      cachedDataType="i4"
+                      cachedName="UserID (stag)"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input].ExternalColumns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      name="RecordLastUpdated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Store New Entries to Production.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Store New Entries to Production.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Store to Production\Store New Entries to Production.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Store New Entries to Production.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Store to Production\Update Existing Entries in Production"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Existing Entries in Production"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE  [KoreAssignment_Charlie_Li].[prod].[Users]
+SET 
+    [FullName] = ?,
+    [Age] = ?,
+    [Email] = ?,
+    [RegistrationDate] = ?,
+    [LastLoginDate] = ?,
+    [PurchaseTotal] = ?
+WHERE
+    [UserID] = ?
+
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Store to Production\Update Existing Entries in Production.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  connectionManagerRefId="Package.ConnectionManagers[CharliePC.KoreAssignment_Charlie_Li]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[UserID (stag)]"
+                      cachedDataType="i4"
+                      cachedName="UserID (stag)"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[UserID (stag)]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[PurchaseTotal]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Store to Production\Merge Join.Outputs[Merge Join Output].Columns[Email]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="r8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Store to Production\Update Existing Entries in Production.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Store to Production.Paths[INSERT (UserID not match)]"
+              endId="Package\Store to Production\Store New Entries to Production.Inputs[OLE DB Destination Input]"
+              name="INSERT (UserID not match)"
+              startId="Package\Store to Production\Conditional Split.Outputs[INSERT (UserID not match)]" />
+            <path
+              refId="Package\Store to Production.Paths[Merge Join Output]"
+              endId="Package\Store to Production\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Store to Production\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Store to Production.Paths[OLE DB Source Output]"
+              endId="Package\Store to Production\Sort Staging on UserID.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Store to Production\Load from Staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Store to Production.Paths[OLE DB Source Output1]"
+              endId="Package\Store to Production\Sort Production on UserID.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Store to Production\Load from Production.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Store to Production.Paths[Sort Output]"
+              endId="Package\Store to Production\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Store to Production\Sort Staging on UserID.Outputs[Sort Output]" />
+            <path
+              refId="Package\Store to Production.Paths[Sort Output1]"
+              endId="Package\Store to Production\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Store to Production\Sort Production on UserID.Outputs[Sort Output]" />
+            <path
+              refId="Package\Store to Production.Paths[UPDATE (UserID match)]"
+              endId="Package\Store to Production\Update Existing Entries in Production.Inputs[OLE DB Command Input]"
+              name="UPDATE (UserID match)"
+              startId="Package\Store to Production\Conditional Split.Outputs[UPDATE (UserID match)]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{67EE820C-1D1B-4E51-9558-2974495674F4}"
+      DTS:From="Package\Extract from CSV to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Cleaning in Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{25426EDD-2B5F-408D-955C-5A64B99179A5}"
+      DTS:From="Package\Data Cleaning in Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Store to Production" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Extract from CSV to Staging"
+          TopLeft="316.666654083465,151.357135124353" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Data Cleaning in Staging"
+          TopLeft="323.333320485222,272.999986052514" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="437.999987284343,193.357135124353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.6428509281608"
+              Start="0,0"
+              End="0,72.1428509281608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.1428509281608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Store to Production"
+          TopLeft="342.499986390273,388.142837312758" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="438.416653437747,314.999986052514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.142851260244"
+              Start="0,0"
+              End="0,65.642851260244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.642851260244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract from CSV to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Extract from CSV to Staging\Load from CSV"
+          TopLeft="307.499987781048,65.928568060301" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Extract from CSV to Staging\Store to Staging"
+          TopLeft="298.333321478632,283.214271244955" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Extract from CSV to Staging\Convert Data"
+          TopLeft="316.666654083464,168.14284860358" />
+        <EdgeLayout
+          Id="Package\Extract from CSV to Staging.Paths[Flat File Source Output]"
+          TopLeft="389.083320932256,107.928568060301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.2142805432789"
+              Start="0,0"
+              End="0,52.7142805432789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.7142805432789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract from CSV to Staging.Paths[Derived Column Output]"
+          TopLeft="390.499987781048,210.14284860358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.0714226413752"
+              Start="0,0"
+              End="0,65.5714226413752">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5714226413752" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract from CSV to Staging\Store to Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Store to Production">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Store to Production\Load from Staging"
+          TopLeft="300,31" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Store to Production\Load from Production"
+          TopLeft="630,32" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Store to Production\Sort Staging on UserID"
+          TopLeft="282,130" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Store to Production\Sort Production on UserID"
+          TopLeft="616,135" />
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[OLE DB Source Output]"
+          TopLeft="389.75,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[OLE DB Source Output1]"
+          TopLeft="732.5,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Store to Production\Merge Join"
+          TopLeft="487,251" />
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[Sort Output]"
+          TopLeft="389,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.5,79"
+              Start="0,0"
+              End="167.5,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="163.5,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.5,39.5"
+                    Point2="167.5,39.5"
+                    Point3="167.5,43.5" />
+                  <mssgle:LineSegment
+                    End="167.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[Sort Output1]"
+          TopLeft="731,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152.666666666667,74"
+              Start="0,0"
+              End="-152.666666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8947368421053"
+                    Point2="0,43.8947368421053"
+                    Point3="-4,43.8947368421053" />
+                  <mssgle:LineSegment
+                    End="-148.666666666667,43.8947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148.666666666667,43.8947368421053"
+                    Point2="-152.666666666667,43.8947368421053"
+                    Point3="-152.666666666667,47.8947368421053" />
+                  <mssgle:LineSegment
+                    End="-152.666666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Store to Production\Conditional Split"
+          TopLeft="472,345" />
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[Merge Join Output]"
+          TopLeft="559.5,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Store to Production\Store New Entries to Production"
+          TopLeft="241,477" />
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[INSERT (UserID not match)]"
+          TopLeft="533.666666666667,387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-154.166666666667,90"
+              Start="0,0"
+              End="-154.166666666667,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.473165388828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.473165388828"
+                    Point2="0,36.473165388828"
+                    Point3="-4,36.473165388828" />
+                  <mssgle:LineSegment
+                    End="-150.166666666667,36.473165388828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-150.166666666667,36.473165388828"
+                    Point2="-154.166666666667,36.473165388828"
+                    Point3="-154.166666666667,40.473165388828" />
+                  <mssgle:LineSegment
+                    End="-154.166666666667,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-138.891673177083,41.473165388828,123.6166796875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="319,42"
+          Id="Package\Store to Production\Update Existing Entries in Production"
+          TopLeft="595,478" />
+        <EdgeLayout
+          Id="Package\Store to Production.Paths[UPDATE (UserID match)]"
+          TopLeft="591.333333333333,387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.166666666667,91"
+              Start="0,0"
+              End="163.166666666667,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8784227820372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8784227820372"
+                    Point2="0,36.8784227820372"
+                    Point3="4,36.8784227820372" />
+                  <mssgle:LineSegment
+                    End="159.166666666667,36.8784227820372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159.166666666667,36.8784227820372"
+                    Point2="163.166666666667,36.8784227820372"
+                    Point3="163.166666666667,40.8784227820372" />
+                  <mssgle:LineSegment
+                    End="163.166666666667,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="27.2776497395833,41.8784227820372,108.6113671875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Store to Production\Load from Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Store to Production\Load from Production">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Store to Production\Store New Entries to Production">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
